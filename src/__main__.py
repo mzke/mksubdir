@@ -1,12 +1,28 @@
 import os
 import sys
+from mksubdir import MkSubDir
 
 
-def get_args():
-    origem = sys.argv[1]
-    destino = sys.argv[2]
+def print_help():
+    print("Use: mksubdir [pasta_base] [pasta_nova]")
+    print("Exemplo: mksubdir C:\\Temp \\RH\\Sefip")
 
 
 if __name__ == "__main__":
-    pass
+    try:
+        arg1 = sys.argv[1]
+    except IndexError:
+        print_help()
+        exit(1)
+
+    try:
+        arg2 = sys.argv[2]
+    except IndexError:
+        arg2 = None
+
+    mksubdir = MkSubDir(arg1, arg2)
+    mksubdir.execute()
+
+
+
 
