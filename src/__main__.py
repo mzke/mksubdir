@@ -2,8 +2,11 @@ import os
 import sys
 from mksubdir import MkSubDir
 
+VERSAO = "0.1"
+
 
 def print_help():
+    print(f"mksubdir {VERSAO}")
     print("Use: mksubdir [pasta_base] [pasta_nova]")
     print("Exemplo: mksubdir C:\\Temp \\RH\\Sefip")
 
